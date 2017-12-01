@@ -14,7 +14,7 @@ class CrudProdutos {
     }
 
     public function salvar(Produto $produto){
-        $sql = "INSERT INTO tb_produtos (nome, preco, categoria, qtd_estoque) VALUES ('$produto->nome', $produto->preco, '$produto->categoria', '$produto->estoque')";
+        $sql = "INSERT INTO tb_produtos (nome,nome_cient, preco, categoria, qtd_estoque) VALUES ('$produto->nome', $produto->preco, '$produto->categoria', '$produto->estoque')";
 
         $this->conexao->exec($sql);
     }
@@ -31,7 +31,7 @@ class CrudProdutos {
         $consulta = $this->conexao->query("SELECT * FROM tb_produtos WHERE id = $codigo");
         $prod = $consulta->fetch(PDO::FETCH_ASSOC);
 
-        return new Produto($prod['nome'], $prod['preco'], $prod['categoria'], $prod['estoque'], $prod['codigo']);
+        return new Produto($prod['nome'],$prod['nome_cient'], $prod['preco'], $prod['categoria'], $prod['estoque'], $prod['codigo']);
     }
 
     public function getProdutos(){
@@ -40,7 +40,7 @@ class CrudProdutos {
 
         $listaNova = [];
         foreach($resultados as $prod){
-            $listaNova[] = new Produto($prod['nome'], $prod['preco'], $prod['categoria'], $prod['estoque'], $prod['codigo']);
+            $listaNova[] = new Produto($prod['nome'],$prod['nome_cient'] , $prod['preco'], $prod['categoria'], $prod['estoque'], $prod['codigo']);
         }
         return $listaNova;
     }

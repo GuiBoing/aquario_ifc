@@ -35,15 +35,13 @@ $codigo = filter_input(INPUT_GET, 'codigo', FILTER_VALIDATE_INT);
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../index.php">Início</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Início</a>
+                    <a class="nav-link" href="#">tela de compra</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -56,7 +54,7 @@ $codigo = filter_input(INPUT_GET, 'codigo', FILTER_VALIDATE_INT);
     <div class="row">
 
         <div class="col-md-5">
-            <img src="../../assets/imagens/product-default.png" alt="" class="img-fluid">
+            <img src="../../assets/imagens/" alt="" class="img-fluid">
         </div>
 
         <div class="col-md-7">

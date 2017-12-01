@@ -12,6 +12,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="https://icon-icons.com/icons2/881/PNG/512/Fish_Food_icon-icons.com_68747.png">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,7 +33,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#"><img src="assets/imagens/logo.png" alt="" width="120px"></a>
+        <a class="navbar-brand" href="#"><img src="assets/imagens/logo.png" alt="" width="10%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,8 +71,9 @@
                     <img class="card-img-top" src="assets/imagens/peixe.jpg" alt="">
                     <div class="card-body">
                         <h4 class="card-title"><?= $prod->nome ?></h4>
+                        <h6 class="card-text"><?= $prod->nome_cient  ?></h6>
                         <p class="card-text"><?= $prod->preco ?></p>
-                        <p class="card-text"><?= $prod->getDisponibilidade() ?></p>
+                        <p class="card-text"><?= $prod->getDisponibilidade()?></p>
                     </div>
                     <div class="card-footer">
                         <a href="app/views/produto.php?codigo=<?= $prod->codigo ?>" class="btn btn-ifc">Veja mais</a>

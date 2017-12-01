@@ -1,10 +1,35 @@
 ﻿<?php
-require_once __DIR__."/../../models/CrudProdutos.php";
+
+require_once "../../../app/models/CrudProdutos.php";
+require_once "../../../app/models/Produto.php";
 $crud = new CrudProdutos();
+
 $listaProdutos = $crud->getProdutos();
-## !!ADICIONE AQUI O CABECALHO DA PAGINA
+
 ?>
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://icon-icons.com/icons2/881/PNG/512/Fish_Food_icon-icons.com_68747.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="../../../assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/ifc-style-admin.css">
+
+
+    <title>Area do admin</title>
+
+
+</head>
+
+<body>
 <!--Barra de busca-->
 <div class="row">
     <div class="col-md-12">
@@ -14,13 +39,34 @@ $listaProdutos = $crud->getProdutos();
         </div>
     </div>
 </div>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="../../../assets/imagens/logo.png" alt="" width="120px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../index.php">Início</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../../app/views/admin/produtos.php">Área do admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <br>
 
 <table class="table table-bordered">
     <thead>
     <tr>
-        <th>#</th>
-        <th>Título</th>
+        <th>codigo</th>
+        <th>nome de mercado</th>
+        <th>nome cientifico</th>
         <th>Preço</th>
         <th>Estoque</th>
         <th>Categoria</th>
@@ -28,13 +74,15 @@ $listaProdutos = $crud->getProdutos();
     </tr>
     </thead>
     <tbody>
-    <?php foreach ($listaProdutos as $produto): ?>
         <tr>
-            <th scope="row">mostre o código do produto</th>
-            <td>##mostre o nome</td>
-            <td>##mostre o preco</td>
-            <td>##mostre o estoque</td>
-            <td>##mostre a categoria</td>
+        <?php foreach($listaProdutos as $prod): ?>
+            <th scope="row"><?= $prod->codigo ?></th>
+            <td><?= $prod->nome ?></td>
+            <td><?= $prod->nome_cient ?></td>
+            <td><?= $prod->preco ?></td>
+            <td><?= $prod->estoque ?></td>
+            <td><?= $prod->categoria ?></td>
+<!--            coloca as funcoes do editar e excluir aq quando fizer-->
             <td>##editar | remover</td>
         </tr>
     <?php endforeach; ?>
@@ -42,4 +90,14 @@ $listaProdutos = $crud->getProdutos();
     </tbody>
 </table>
 
-<!-- ## ADICIONE AQUI O RODAPE DA PAGINA -->
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Instituto Federal Catarinense de Educação, Ciência e Tecnologia</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+</body>
+
+</html>
