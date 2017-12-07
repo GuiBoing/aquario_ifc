@@ -3,11 +3,13 @@ require_once "../models/CrudProdutos.php";
 $crud = new CrudProdutos();
 //seguranca
 $codigo = filter_input(INPUT_GET, 'codigo', FILTER_VALIDATE_INT);
-//$produto =;
+$produto = $crud->getProduto($codigo);
 ?>
 
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
 
@@ -35,13 +37,15 @@ $codigo = filter_input(INPUT_GET, 'codigo', FILTER_VALIDATE_INT);
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../../index.php">Início</a>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">tela de compra</a>
+                    <a class="nav-link" href="#">Início</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contato</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -54,19 +58,22 @@ $codigo = filter_input(INPUT_GET, 'codigo', FILTER_VALIDATE_INT);
     <div class="row">
 
         <div class="col-md-5">
-            <img src="../../assets/imagens/" alt="" class="img-fluid">
+            <img src="../../assets/imagens/bgaqua.png" alt="" class="img-fluid">
         </div>
 
         <div class="col-md-7">
             <div class="row">
                 <div class="col-md-12">
-                    <h2><?= $produto->titulo; ?></h2>
+                    <h2><?= $produto->nome; ?></h2>
+                    <h4 class="lead"><?= $produto->nome_cient; ?></h4>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <span class="badge badge-primary">mostre a categoria</span>
-                    <span class="badge badge-warning">mostre a disponibilidade</span>
+                    <span class="badge badge-primary"> <?= $produto-> getDisponibilidade()?></span>
+                    <span class="badge badge-warning"> <?= $produto-> preco?></span>
+                    <span class="badge badge-info"> <?= $produto-> categoria?></span>
+
                 </div>
             </div>
             <!-- end row -->

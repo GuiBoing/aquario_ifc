@@ -19,16 +19,9 @@ class CrudProdutos {
         $this->conexao->exec($sql);
     }
 
-    public function buscarProduto(int $codigo){
-        $consulta = $this->conexao->query("SELECT * FROM tb_produtos WHERE codigo = $codigo");
-        $produto = $consulta->fetch(PDO::FETCH_ASSOC);
-
-        return $produto;
-
-    }
 
     public function getProduto(int $codigo){
-        $consulta = $this->conexao->query("SELECT * FROM tb_produtos WHERE id = $codigo");
+        $consulta = $this->conexao->query("SELECT * FROM tb_produtos WHERE codigo = $codigo");
         $prod = $consulta->fetch(PDO::FETCH_ASSOC);
 
         return new Produto($prod['nome'],$prod['nome_cient'], $prod['preco'], $prod['categoria'], $prod['estoque'], $prod['codigo']);

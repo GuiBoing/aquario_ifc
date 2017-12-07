@@ -55,6 +55,7 @@
     <div class="container"
         <h1 class="display-3">Aquariozão do IFC!</h1>
         <p class="lead">Só aqui você encontra as melhores ofertas de peixes e animais aquaríferos.</p>
+          <h6 class="lead">Com uma variedade grande e incriveis animais somos a melhor loja para comprar peixes exoticos para seu aquario     </h6>
 
 </header>
 

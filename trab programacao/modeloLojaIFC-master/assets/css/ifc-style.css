@@ -1,8 +1,8 @@
 
 body {
-  color: #fff;
+  color: black;
 padding-top: 55px;
-background-image: url("../imagens/bgpeixe.jpg");
+background-image: url("../imagens/aquarepeat.jpg");
   background-repeat: repeat;
 }
 
@@ -11,9 +11,14 @@ background-image: url("../imagens/bgpeixe.jpg");
   body {
     padding-top: 80px;
   }
-}
 
-.card {
+}
+@media (min-width: 576px) {
+  .jumbotron {
+   padding: 1rem 1rem;
+  }
+}
+  .card {
   height: 100%;
 }
 .card-body{
@@ -36,10 +41,19 @@ background-image: url("../imagens/bgpeixe.jpg");
   color: #fff;
   background-color: #079673;
 }
+.img-fluid{
+  padding: 24px;
+}
 
 .footer {
   position: fixed;
   width: 100%;
   bottom: 0;
 }
+.display-3 {
+  padding: 1%;
+}
+.badge{
+  padding:5%;
+  }
 
